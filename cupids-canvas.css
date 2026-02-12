@@ -1,148 +1,75 @@
-/* Cupid's Canvas — Universal Valentine's Theme */
-/* Use for index.html, index2.html, and index3.html */
+/* Garden style.css - simplified version (no font import, no keyframes) */
 
-/* ---------- Colors ---------- */
+/* ---------------- Colors ---------------- */
 :root {
   --cupid-pink: #FFAFCC;
   --valentine-red: #FF4D6D;
   --love-purple: #C77DFF;
   --chocolate: #7B3F00;
   --vanilla: #FFFAF0;
-  --deep-rose: #b03060;
-  --soft-blush: #fff5f7;
-  --text-dark: #4a1c2a;
 }
 
-/* ---------- Reset ---------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ---------- Base ---------- */
+/* ---------------- Base layout ---------------- */
 body {
-  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--vanilla);
+  color: var(--chocolate);
+  margin: 0;
   text-align: center;
-  line-height: 1.6;
 }
 
-/* ---------- Navigation ---------- */
+/* ---------------- Header & Nav ---------------- */
 header {
-  background: var(--deep-rose);
+  background: var(--cupid-pink);
   padding: 1rem;
-  color: #fff;
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .main-nav a {
-  color: white;
+  color: var(--chocolate);
   text-decoration: none;
   margin: 0 1rem;
   font-weight: bold;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s;
 }
 
 .main-nav a:hover,
 .main-nav .active {
-  color: var(--cupid-pink);
-  transform: scale(1.1);
+  color: var(--valentine-red);
+  text-decoration: underline;
 }
 
-/* ---------- Hero Section ---------- */
+/* ---------------- Hero Section ---------------- */
 .hero {
-  padding: 3rem 1rem;
-  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(var(--vanilla), var(--cupid-pink));
   border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255,250,240,0.9), rgba(255,255,255,0.4));
-  max-width: 800px;
-  color: var(--text-dark);
+  margin: 2rem;
 }
 
 .hero h1 {
   font-family: cursive;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: var(--valentine-red);
-  margin-bottom: 0.5rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-/* ---------- Buttons ---------- */
-button,
 .cta {
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  background-color: white;
-  color: var(--valentine-red);
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
+  background: var(--love-purple);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
   text-decoration: none;
   display: inline-block;
+  margin-top: 1rem;
+  transition: background 0.3s;
 }
 
-button:hover,
 .cta:hover {
-  background-color: #ffe6e6;
-  transform: translateY(-3px);
+  background: var(--valentine-red);
 }
 
-/* ---------- Heart Animation ---------- */
-.heart {
-  font-size: 60px;
-  animation: beat 1s infinite;
-  display: inline-block;
-  margin: 1rem 0;
-}
-
-@keyframes beat {
-  0%, 100% { transform: scale(1); }
-  25%, 75% { transform: scale(1.2); }
-  50% { transform: scale(1); }
-}
-
-/* ---------- Gallery (index2) ---------- */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-section h2 {
-  font-family: cursive;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: var(--deep-rose);
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* ---------- Cupid's Garden Images (index3) ---------- */
+/* ---------------- Garden Images ---------------- */
 .garden {
   display: flex;
   justify-content: center;
@@ -152,42 +79,25 @@ section h2 {
 }
 
 .garden-img {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
+/* Simple hover effects instead of animations */
 .garden-img:hover {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1) rotate(3deg);
   box-shadow: 0 10px 25px rgba(199, 125, 255, 0.25);
+  filter: brightness(1.1);
 }
 
-/* ---------- Footer ---------- */
+/* ---------------- Footer ---------------- */
 footer {
-  background: var(--deep-rose);
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
+  background: var(--cupid-pink);
+  padding: 1rem;
   font-size: 0.9rem;
-}
-
-/* ---------- Page-specific Backgrounds ---------- */
-body.index-page {
-  background: linear-gradient(to right, #ff4e50, #fc913a);
-  color: white;
-}
-
-body.romance-page {
-  background: var(--soft-blush);
-  color: var(--text-dark);
-}
-
-body.garden-page {
-  background: var(--vanilla);
-  color: var(--chocolate);
 }
